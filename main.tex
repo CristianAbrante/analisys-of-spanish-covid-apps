@@ -1,0 +1,92 @@
+\documentclass[a4paper, 12pt]{article}
+ % This is used for setting the margins
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+%%%% IMPORTED PACKAGES %%%
+\usepackage{graphicx}
+\usepackage{amsmath}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{keywords}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item[\hskip\labelsep \bfseries Keywords:]}
+{\end{list}}
+
+\begin{document}
+
+%%%%%%%% COVER %%%%%%%%%%%
+\input{cover.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% ABSTRACT %%%%%%%%%%
+\newpage
+\begin{abstract}
+{\em
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis maximus dui. Sed congue ultrices diam, ac posuere orci vehicula sit amet. Sed eu iaculis ex. Vestibulum tempor dictum nunc, sed tincidunt tortor feugiat a. Quisque cursus ut leo ac fringilla. Nullam feugiat, est quis egestas faucibus, nulla diam cursus justo, in dapibus lorem ipsum nec augue. Proin mattis fringilla lectus aliquet congue.
+
+\bigskip
+
+Nulla orci augue, convallis sit amet neque et, vehicula tincidunt dolor. Vivamus commodo massa sit amet lobortis blandit. Curabitur imperdiet mi nec elit porttitor dictum. Vestibulum in urna risus. In ac laoreet lorem. Donec in libero eu dolor iaculis ullamcorper sit amet sit amet velit. Phasellus sit amet felis purus. Integer pretium nec erat quis sagittis. Etiam dictum hendrerit venenatis. Vestibulum semper, odio non efficitur suscipit, lorem ex iaculis libero, id pretium lacus augue a ipsum. Suspendisse commodo sed justo sit amet pharetra. Donec interdum pulvinar molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+}
+
+\begin{keywords}
+Keyword 1, Keyword 2, Keyword 3
+\end{keywords}
+\end{abstract}
+
+\newpage{\pagestyle{empty}}
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% TABLE OF CONTENTS %%%%%
+\tableofcontents
+\newpage{\pagestyle{empty}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Set the counter of the page to 1 after the index.
+\setcounter{page}{1}
+
+%%%%%%%% SECTION 1 %%%%%%%
+\section{Section 1}
+\label{section-1}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices nisl in libero aliquet eleifend. Nam nibh leo, egestas non auctor eu, egestas eu libero. Cras sem tortor, pulvinar sed tincidunt et, viverra id ipsum. Suspendisse venenatis pharetra lectus sit amet porta. Cras euismod et tellus in aliquet. Quisque non posuere velit. Vivamus dui tortor, euismod eu imperdiet vel, ornare vel lectus. Vestibulum id ex neque. Curabitur ligula magna, sagittis at pulvinar in, mattis at magna.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% SECTION 2 %%%%%%%
+\section{Section 2}
+\label{section-2}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices nisl in libero aliquet eleifend. Nam nibh leo, egestas non auctor eu, egestas eu libero. Cras sem tortor, pulvinar sed tincidunt et, viverra id ipsum. Suspendisse venenatis pharetra lectus sit amet porta. Cras euismod et tellus in aliquet. Quisque non posuere velit. Vivamus dui tortor, euismod eu imperdiet vel, ornare vel lectus. Vestibulum id ex neque. Curabitur ligula magna, sagittis at pulvinar in, mattis at magna.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% SECTION 3 %%%%%%%
+\section{Section 3}
+\label{section-3}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices nisl in libero aliquet eleifend. Nam nibh leo, egestas non auctor eu, egestas eu libero. Cras sem tortor, pulvinar sed tincidunt et, viverra id ipsum. Suspendisse venenatis pharetra lectus sit amet porta. Cras euismod et tellus in aliquet. Quisque non posuere velit. Vivamus dui tortor, euismod eu imperdiet vel, ornare vel lectus. Vestibulum id ex neque. Curabitur ligula magna, sagittis at pulvinar in, mattis at magna.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% SECTION 4 %%%%%%%
+\section{Section 4}
+\label{section-4}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices nisl in libero aliquet eleifend. Nam nibh leo, egestas non auctor eu, egestas eu libero. Cras sem tortor, pulvinar sed tincidunt et, viverra id ipsum. Suspendisse venenatis pharetra lectus sit amet porta. Cras euismod et tellus in aliquet. Quisque non posuere velit. Vivamus dui tortor, euismod eu imperdiet vel, ornare vel lectus. Vestibulum id ex neque. Curabitur ligula magna, sagittis at pulvinar in, mattis at magna.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% BIBLIOGRAPHY %%%%%%
+\addcontentsline{toc}{section}{References}
+
+\bibliographystyle{plain}
+
+\bibliography{bibliography}
+\nocite{*}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
