@@ -61,15 +61,136 @@ Focusing on healthcare applications, in the past they have been really effective
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%% SECTION 2 %%%%%%%
-\section{Review of the current COVID-19 applications}
+\section{Review of COVID-19 applications}
 \label{section:review}
 
-In this section it is covered the different approaches that many countries, businesses and institutions are following for the development of applications related to the COVID-19 pandemic. On the one hand we have exposed information and auto diagnosis applications, focusing on the ones developed in Spain, and on the other hand we have explained tracking applications, focusing on explaining the two main approaches; centralized and decentralized.
+In this section, it is covered the different approaches that many countries, businesses, and institutions are following for the development of applications related to the COVID-19 pandemic. On the one hand, we have exposed information and auto diagnosis applications, and on the other hand, we have explained tracking applications, focusing on explaining the two main approaches; centralized and decentralized.
 
-\subsection{Information and auto diagnosis solutions}
+\subsection{COVID-19 information and auto diagnosis solutions}
 \label{subsection:information-auto-diagnosis}
 
 Information and auto-diagnosis applications and websites are the first approaches that many regions have followed for the development of software that could help to fight the pandemic. The main aim of those software products is to offer a reliable source of information and at the same time decongest telephone lines that are offered for citizens. \\
+
+The traditional test that can be done to a person to confirm if it is infected is the PCR test (\textit{polymerise chain reaction}), a test that can detect the presence of DNA of the virus in the patient. This method is effective, but it is really expensive at the cost of necessary chemical products, and also because the test takes a while to give a result. This caused that no country has developed more tests than 2.5\% of its' population \cite{covid19-ml}. For having a fast response, auto diagnosis applications could be an effective solution.\\
+
+Auto diagnosis applications try to give as a result if a patient is infected with COVID-19 receiving as input some parameters that the user can introduce in a simple form. Then, those results are fed to an intelligent system, usually a machine learning model, giving as a result a binary response: if the patient is infected or not. They are not as effective as a traditional response, but they are really helpful because they produce a fast response where a patient has doubts about being infected.\\
+
+Those applications usually ask the user to introduce parameters such as if they had a fever or if they had recently throat pain, but there have been more advanced applications like COVID-19 sounds app \cite{covid19-cambridge}, developed by Cambridge University, which asks the user to speak to the microphone, and with the sound of the voice it could determine if they are infected. \\
+
+Although the creation of auto diagnosis applications is the first approach that many governments are following, is not the most effective way for controlling the pandemic, because their use is justified when the person present symptoms, and at that point is too late, because before presenting symptoms that person could have infected many others. Knowing that a person is infected before they present symptoms it is required to prevent the spreading of the virus, and for that other types of software are needed.
+
+\subsection{COVID-19 tracking solutions}
+\label{subsection:covid-19-tracking}
+
+In Section \ref{subsection:information-auto-diagnosis}, we exposed several applications used mainly for auto diagnosis on population. This software is really useful for decongesting telephonic lines and reduce the number of visits to clinical centers, but it is not the right tool for analyzing the evolution of the pandemic and track the infected population.\\
+
+Achieving accurate monitoring of the virus is a really difficult task, mainly due to the infectivity and for a long time that it takes to manifest the first symptoms after the patient is infected. Thankfully, the development of mobile devices and new types of connectivity offers new possibilities for tracking how the virus is disseminated in the population. \\
+
+Security and privacy are the main concerns behind that type of technology, mainly because location and number of people that you keep contact with is information that is required to harvest from the population. Although this information is required, two approaches have been developed in recent months for the treatment of that information: centralized and decentralized approach. We are going to cover that technology in the following sections. \\
+
+\subsubsection{Centralized approach for COVID-19 tracking}
+\label{subsubsection:centralized-approach}
+
+A Centralized approach is the most straightforward way to achieve COVID-19 contact tracing. It was first implemented in China, coinciding with the lifting of strict lockdown orders. The Chinese government is well known for using \textit{state of the art} technology for surveillance. One example of it is the usage of facial recognition techniques in order to control the activity of citizens, including targeting ethnic minorities \cite{china-massive-covid-tracking}. \\
+
+In mid-February, when the coronavirus situation started to be less restrictive, the Chinese government implemented a scoring system, in cooperation with tech giants such as Alibaba \cite{china-massive-covid-tracking}. When a citizen wanted to use public transport or wanted to go shopping, they had to prove that they were not at risk of infecting other people. For achieving that, they had to scan a QR code before entering the place they want. This QR code was provided by the government, and when a citizen scans this code, the AliPay application gives as a result a score and a color code. When the color is green, this person is not in risk of been infected with COVID-19, when the code is yellow, the citizen is in moderated risk, finally with the color red, the citizen has a high risk of being infected, thus it would not be allowed to enter into the place \cite{china-qr-codes}. \\
+
+There has not been a clear report on how the Chinese government calculates the score for each citizen, but, probably, that it depends mainly on user location and recent contacts that they had. This situation separates the line between government and tech giants in the Asian country and also is the perfect scenario for spreading the use of massive surveillance systems in population \cite{china-qr-codes}. \\
+
+This approach was also followed in other Asian countries like South Korea, where the government has developed a central database that contains specific information about coronavirus cases and infections, with exact information such as detailed movements around the country, age, gender, and sex \cite{south-korea-surveillance}. This type of software gained popularity in Korea because of its tested effectiveness fighting the pandemic. \\
+
+Although centralized solutions are more popular in Asian countries, there have been some attempts of implementations of similar systems in countries like Israel or the UK. In Israel, the government has approved an exceptional measure that allowed them to access the location of population cell phones via the network provider \cite{israel-covid-tracing}. In the case of the UK, the National Health Agency has declared that they are going to implement a centralized approach where the matches of contacts with high infection probability are going to happen in a central server \cite{uk-tracking}.\\
+
+Centralized approaches for COVID-19 tracking are effective in societies when the government has a lot of control over the population, and where individual privacy is not widespread. But raises some concerns to be implemented in Europe or in the United States, where governments prefer to follow decentralized approaches.
+
+\subsubsection{Decentralized approach for COVID-19 tracking}
+\label{subsubsection:decentralized-approach}
+
+The decentralized approach for COVID-19 tracking is the trend that many western countries and institutions are following. The main characteristic of decentralized methods is that they preserve the privacy of the users involved in the system, moving the tracking of the infected population from a central server to the citizen's smartphones. \\
+
+Decentralized contact tracing is a well-known field in the literature since 2013 \cite{bell2020tracesecure}\cite{altuwaiyan2018epic}\cite{zhang2013privacy}, but during this pandemic, this work has become relevant. Also, an important breakthrough in this sense was the usage of \textit{Bluetooth Low Energy}, a variant of Bluetooth network technology that could be used to track devices which are near, without the need of using the GPS signal. \\
+
+But it is not enough by specifying what is the technology that is going to be used for tracking the proximity between devices, it is also needed to define the protocols and algorithms that those devices are going to follow to communicate between them. In this sense, the first protocol developed was \textit{Pan-European Privacy-Preserving Proximity Tracing} (PEPP-PT) \cite{pepppt} from a collaboration between a French and a German university. This protocol combines a centralized and decentralized approach and was welcomed with enthusiasm. But, some European countries have dismissed their use because it is not as respectful of privacy as expected \cite{swiss-peppt}.\\
+
+To solve these privacy concerns, a coalition of eight European universities have developed the protocol \textit{Decentralized Privacy-Preserving Proximity Tracing} (DP3T) \cite{dp3t-docs}, which has rapidly gained popularity in the academic and institutional field. One proof of that is the recent interest that Apple and Google are showing for following this protocol for the COVID-19 tracking application that they are developing together \cite{dp3t-google-apple}. As it is considered the new \textit{de facto} standard in coronavirus tracking, it is important to know how it works in a detailed way.\\
+
+The DP3T protocol relies on the use of mobile devices that users are supposed to carry with them when they go to the street and have contact with people. Each mobile device should generate a unique secret key each day $t$, which is called $SK_t$. This secret key is the privacy safeguard of the user and will be the media that other devices are going to use in order to determine if they are in danger of being infected. It is important to mention also that this key is going to be finally revealed only if the user wants. \\
+
+For generating the secret key of the day ($SK_t$), the device is going to use a public hash function $H$, which will use as a seed, the secret key of the previous day ($SK_{t-1}$). One characteristic of function $H$ is that computing the secret key for the next day ($Sk_{t+1}$) is easy having the key of the current day ($SK_t$), but it is impossible to compute the key of the previous day ($SK_{t-1}$). This is done to preserve the privacy of the user if the key of the day $t$ is revealed. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{images/discussion/SK-ids-diagram.png}
+    \caption{Diagram of the secret key ($SK$) and ephemeral IDs ($ephID$) generated per day}
+    \label{fig:sk-diagram}
+\end{figure}
+
+As shown in Figure \ref{fig:sk-diagram}, for each day $t$, mobile devices are going to generate 288 ephemeral IDs ($EphID_i$), where each ephemeral ID is going to be emitted by the devices using \textit{Bluetooth Low Energy} for 5 minutes. This is why 288 IDs are needed per day, because a day has 1440 minutes, and the IDs are only valid for 5 minutes. For the generation of the ephemeral IDs, the devices are going to use a function $G$, which is a pseudorandom generator that uses $SK_t$ as a seed (described in equation \ref{eq:ephemeral-id}).
+
+\begin{equation}
+\begin{split}
+    G: SK_t \rightarrow EphID_i \\
+    \{EphID_1, EphID_2, \cdots, EphID_{288}\} = \{G(SK_t), G(SK_t), \cdots, G(SK_t)\}
+\end{split}
+\label{eq:ephemeral-id}
+\end{equation}
+
+After the generation of the ephemeral IDs, the device should use a random permutation function ($\sigma$), to distribute the ephemeral IDs though the 288-time slots of the day (described in equation \ref{eq:ephid-permutation}). After decide which is the order of emission, the device should start to emit the identifiers.
+
+\begin{equation}
+    \begin{split}
+        \sigma : \{1, \cdots, 288\} \rightarrow \{1, \cdots, 288\} \\
+        \{EphID_{\sigma(1)}, EphID_{\sigma(2)}, \cdots, EphID_{\sigma(288)}\}
+    \end{split}
+    \label{eq:ephid-permutation}
+\end{equation}
+
+Let us suppose that during the emission, two devices are sufficiently near. Both of them are going to record the ephemeral IDs detected in a registry log. The device can not know whom the ephemeral IDs belong to, because they did not know the secret key of the day. If they would know the secret key of the day ($SK_t$) for a user, they could compute the ephemeral IDs that the device emitted in the day, because they know the function $G$. Using the ephemeral Ids logs, each device could have a registry of the contacts that it had per day, annotating also the duration and intensity of the signal detected. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{images/discussion/ephid-log.png}
+    \caption{When a device detects the $EphID$ of other device it adds it to a log and can not distinguish what device it came from.}
+    \label{fig:ephid-log}
+\end{figure}
+
+In case that a user gets infected with COVID-19, the system has to start a process that notifies other users who have contact with the infected person and consequently starts a process of quarantine or they can contact health authorities. For starting this process, the system needs the collaboration of the local health authorities, which will determine which was the day when the person got infected (day $T$). Then, the health authorities should provide a central server that will publish the secret key of the day that the infection started ($SK_T$). Every day, all users of the system must download the list of secret keys of infected users. Having the secret key of an infected user on day $T$, each user must compute the following secret keys for each day until present day $t$, using function $H$ (Equation \ref{eq:sk-computation}).
+
+\begin{equation}
+    \begin{split}
+        SK_T \\
+        SK_{T+1} = H(SK_T) \\
+        SK_{T+2} = H(SK_{T+1}) \\
+        \cdots \\
+        SK_t = H(SK_{t-1})
+    \end{split}
+    \label{eq:sk-computation}
+\end{equation}
+
+Having the list of secret keys, they can compute easily the ephemeral IDs of each day, using function $G$, creating a set of infected ephemeral IDs called $I$ (Equation \ref{eq:ephid-computation}).
+
+\begin{equation}
+\begin{aligned}
+I ={} & \{\{G(SK_T)_1, G(SK_T)_2, \cdots, G(SK_T)_{288}\} \\
+      & \cup \{G(SK_{T+1})_1, G(SK_{T+1})_2, \cdots, G(SK_{T+1})_{288}\} \\
+      & \cdots \\
+      & \cup \{G(SK_t)_1, G(SK_t)_2, \cdots, G(SK_t)_{288}\}\}
+\end{aligned}
+\label{eq:ephid-computation}
+\end{equation}
+
+Having computed the set $I$, and the logs that are locally stored in the device, it could be determined if the local user is at risk of being infected by computing the intersection between those two sets. If the intersection is empty, the user is not at risk of being infected, but if there is at least one ephemeral ID that they have in common, we can determine that the user is at risk. As we can see, the characteristics of this method allow users to know if they are infected with COVID-19, but they could not know who infected them, and also local authorities could not know how and when the citizen got infected, guaranteeing the privacy of all citizens involved.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% SECTION 3 %%%%%%%
+\section{Discussion of COVID-19 Applications in Spain}
+\label{section:discussion}
+
+In Section \ref{section:review}, it was exposed the different types of applications that have been developed for fighting against the COVID-19 pandemic. In this section, it is going to be covered the different initiatives that have been developed in Spain, both in information applications and also in services for tracking the pandemic.
+
+\subsection{COVID-19 Information and auto diagnosis applications in Spain}
+\label{sec:information-apps-spain}
 
 In Spain, the central source of information for the pandemic has been the website of the Ministry of Health \cite{ministerio-sanidad}. In this website is where it is published the scientific information regarding the disease, and also is where the official numbers of new infected, dead and tested population is published every day.\\
 
@@ -144,115 +265,14 @@ As \textit{CoronaMadrid} was the first auto diagnosis application of the virus i
 
 The analysis of the user interface of the application makes clear that it was inspired by \textit{CoronaMadrid}, (similarities in the user interface can be shown in Figure \ref{fig:asistencia-covid-19}). One visual element that hold important similarities between those apps are forms, having essentially the same information, with some minor differences; especially in the one for introducing personal details.
 
-\subsection{COVID-19 tracking solutions}
-\label{subsection:covid-19-tracking}
+\subsection{COVID-19 tracking solutions in Spain}
+\label{sec:information-apps-spain}
 
-In Section \ref{subsection:information-auto-diagnosis}, we exposed a number of applications used mainly for auto diagnosis on population. This software is really useful for decongesting telephonic lines and reduce the number of visits to clinical centers, but it is not the right tool for analyzing the evolution of the pandemic and track the infected population.\\
+As it was discussed in Section \ref{section:review}, the most effective software tool for fighting against the evolution of the pandemic in a region is by using a tracking application. In Spain, there have not been many movements in that direction, because they have mainly centered the efforts in the development of information and auto diagnosis applications.\\
 
-Achieving an accurate monitoring of the virus is a really difficult task, mainly due to the infectivity and for the long time that it takes to manifest the first symptoms after the patient is infected. Thankfully, the development of mobile devices and new types of connectivity offers new possibilities for tracking how the virus is disseminated in the population. \\
+Recent moves towards the direction of the creation of a COVID-19 tracking application, points out to the use of a decentralized approach (reviewed on Section \ref{subsubsection:decentralized-approach}), using the Barcelona Supercomputing Center (BSC) as the central server for the processing of all the data generated \cite{covid19-tracking-bsc}. Also, the government is considering the possibility of using the Apple and Google system, which provides a public API (\textit{Application Programming Interface}), from which they can build their own system \cite{covid19-apple-google}.\\
 
-Security and privacy are the main concerns behind that type of technology, mainly because location and number of people that you keep the contact with is information that is required to harvest from population. Although this information is required, there are two approaches that have been developed in recent months for the treatment of that information: centralized and decentralized approach. We are going to cover that technology in the following sections. \\
-
-\subsubsection{Centralized approach for COVID-19 tracking}
-\label{subsubsection:centralized-approach}
-
-A Centralized approach is the most straightforward way to achieve COVID-19 contact tracing. It was first implemented in China, coinciding with the lifting of strict lockdown orders. The Chinese government is well known for using \textit{state of the art} technology for surveillance. One example of it is the usage of facial recognition techniques in order to control the activity of citizens, including targeting ethnic minorities \cite{china-massive-covid-tracking}. \\
-
-In mid-February, when the coronavirus situation started to be less restrictive, the Chinese government implemented a scoring system, in cooperation with tech giants such as Alibaba \cite{china-massive-covid-tracking}. When a citizen wanted to use public transport or wanted to go shopping, they had to prove that they were not at risk of infecting other people. For achieving that, they had to scan a QR code before entering the place they want. This QR code was provided by the government, and when a citizen scans this code, the AliPay application gives as a result a score and a color code. When the color is green, this person is not in risk of been infected with COVID-19, when the code is yellow, the citizen is in moderated risk, finally with the color red, the citizen has a high risk of being infected, thus it would not be allowed to enter into the place \cite{china-qr-codes}. \\
-
-There has not been a clear report on how the Chinese government calculates the score for each citizen, but, probably, that it depends mainly on user location and recent contacts that they had. This situation separates the line between government and tech giants in the Asian country and also is the perfect scenario for spreading the use of massive surveillance systems in population \cite{china-qr-codes}. \\
-
-This approach was also followed in other Asian countries like South Korea, where the government has developed a central database that contains specific information about coronavirus cases and infections, with exact information such as detailed movements around the country, age, gender, and sex \cite{south-korea-surveillance}. This type of software gained popularity in Korea because of its tested effectiveness fighting the pandemic. \\
-
-Although centralized solutions are more popular in Asian countries, there have been some attempts of implementations of similar systems in countries like Israel or the UK. In Israel, the government has approved an exceptional measure that allowed them to access the location of population cell phones via the network provider \cite{israel-covid-tracing}. In the case of the UK, the National Health Agency has declared that they are going to implement a centralized approach where the matches of contacts with high infection probability are going to happen in a central server \cite{uk-tracking}.\\
-
-Centralized approaches for COVID-19 tracking are effective in societies when the government has a lot of control over the population, and where individual privacy is not widespread. But raises some concerns to be implemented in Europe or in the United States, where governments prefer to follow decentralized approaches.
-
-\subsubsection{Decentralized approach for COVID-19 tracking}
-\label{subsubsection:decentralized-approach}
-
-The decentralized approach for COVID-19 tracking is the trend that many western countries and institutions are following. The main characteristic of decentralized methods is that they preserve the privacy of the users involved in the system, moving the tracking of the infected population from a central server to the citizen's smartphones. \\
-
-Decentralized contact tracing is a well-known field in the literature since 2013 \cite{bell2020tracesecure}\cite{altuwaiyan2018epic}\cite{zhang2013privacy}, but during this pandemic, this work has become relevant. Also, an important breakthrough in this sense was the usage of \textit{Bluetooth Low Energy}, a variant of Bluetooth network technology that could be used to track devices which are near, without the need of using the GPS signal. \\
-
-But it is not enough by specifying what is the technology that is going to be used for tracking the proximity between devices, it is also needed to define the protocols and algorithms that those devices are going to follow to communicate between them. In this sense, the first protocol developed was \textit{Pan-European Privacy-Preserving Proximity Tracing} (PEPP-PT) \cite{pepppt} from a collaboration between a French and a German university. This protocol combines a centralized and decentralized approach and was welcomed with enthusiasm. But, some European countries have dismissed their use because it is not as respectful of privacy as expected \cite{swiss-peppt}.\\
-
-To solve these privacy concerns, a coalition of eight European universities have developed the protocol \textit{Decentralized Privacy-Preserving Proximity Tracing} (DP3T) \cite{dp3t-docs}, which has rapidly gained popularity in the academic and institutional field. One proof of that is the recent interest that Apple and Google are showing for following this protocol for the COVID-19 tracking application that they are developing together \cite{dp3t-google-apple}. As it is considered the new \textit{de facto} standard in coronavirus tracking, it is important to know how it works in a detailed way.\\
-
-The DP3T protocol relies on the use of mobile devices that users are supposed to carry with them when they go to the street and have contact with people. Each mobile device should generate a unique secret key each day $t$, which is called $SK_t$. This secret key is the privacy safeguard of the user and will be the media that other devices are going to use in order to determine if they are in danger of being infected. It is important to mention also that this key is going to be finally revealed only if the user wants. \\
-
-For generating the secret key of the day ($SK_t$), the device is going to use a public hash function $H$, which will use as a seed, the secret key of the previous day ($SK_{t-1}$). One characteristic of function $H$ is that computing the secret key for the next day ($Sk_{t+1}$) is easy having the key of the current day ($SK_t$), but it is impossible to compute the key of the previous day ($SK_{t-1}$). This is done to preserve the privacy of the user if the key of the day $t$ is revealed.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.4]{images/discussion/SK-ids-diagram.png}
-    \caption{Diagram of the secret key ($SK$) and ephemeral IDs ($ephID$) generated per day}
-    \label{fig:sk-diagram}
-\end{figure}
-
-As shown in Figure \ref{fig:sk-diagram}, for each day $t$, mobile devices are going to generate 288 ephemeral IDs ($EphID_i$), where each ephemeral ID is going to be emitted by the devices using \textit{Bluetooth Low Energy} for 5 minutes. This is why 288 IDs are needed per day, because a day has 1440 minutes, and the IDs are only valid for 5 minutes. For the generation of the ephemeral IDs, the devices are going to use a function $G$, which is a pseudorandom generator that uses $SK_t$ as a seed (described in equation \ref{eq:ephemeral-id}).
-
-\begin{equation}
-\begin{split}
-    G: SK_t \rightarrow EphID_i \\
-    \{EphID_1, EphID_2, \cdots, EphID_{288}\} = \{G(SK_t), G(SK_t), \cdots, G(SK_t)\}
-\end{split}
-\label{eq:ephemeral-id}
-\end{equation}
-
-After the generation of the ephemeral IDs, the device should use a random permutation function ($\sigma$), to distribute the ephemeral IDs though the 288-time slots of the day (described in equation \ref{eq:ephid-permutation}). After decide which is the order of emission, the device should start to emit the identifiers.
-
-\begin{equation}
-    \begin{split}
-        \sigma : \{1, \cdots, 288\} \rightarrow \{1, \cdots, 288\} \\
-        \{EphID_{\sigma(1)}, EphID_{\sigma(2)}, \cdots, EphID_{\sigma(288)}\}
-    \end{split}
-    \label{eq:ephid-permutation}
-\end{equation}
-
-Let us suppose that during the emission, two devices are sufficiently near. Both of them are going to record the ephemeral IDs detected in a registry log. The device can not know whom the ephemeral IDs belong to, because they did not know the secret key of the day. If they would know the secret key of the day ($SK_t$) for a user, they could compute the ephemeral IDs that the device emitted in the day, because they know the function $G$. Using the ephemeral Ids logs, each device could have a registry of the contacts that it had per day, annotating also the duration and intensity of the signal detected. \\
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.4]{images/discussion/ephid-log.png}
-    \caption{When a device detects the $EphID$ of other device it adds it to a log and can not distinguish what device it came from.}
-    \label{fig:ephid-log}
-\end{figure}
-
-In case that a user gets infected with COVID-19, the system has to start a process that notifies other users who have contact with the infected person and consequently starts a process of quarantine or they can contact health authorities. For starting this process, the system needs the collaboration of the local health authorities, which will determine which was the day when the person got infected (day $T$). Then, the health authorities should provide a central server that will publish the secret key of the day that the infection started ($SK_T$). Every day, all users of the system must download the list of secret keys of infected users. Having the secret key of an infected user on day $T$, each user must compute the following secret keys for each day until present day $t$, using function $H$ (Equation \ref{eq:sk-computation}).
-
-\begin{equation}
-    \begin{split}
-        SK_T \\
-        SK_{T+1} = H(SK_T) \\
-        SK_{T+2} = H(SK_{T+1}) \\
-        \cdots \\
-        SK_t = H(SK_{t-1})
-    \end{split}
-    \label{eq:sk-computation}
-\end{equation}
-
-Having the list of secret keys, they can compute easily the ephemeral IDs of each day, using function $G$, creating a set of infected ephemeral IDs called $I$ (Equation \ref{eq:ephid-computation}).
-
-\begin{equation}
-\begin{aligned}
-I ={} & \{\{G(SK_T)_1, G(SK_T)_2, \cdots, G(SK_T)_{288}\} \\
-      & \cup \{G(SK_{T+1})_1, G(SK_{T+1})_2, \cdots, G(SK_{T+1})_{288}\} \\
-      & \cdots \\
-      & \cup \{G(SK_t)_1, G(SK_t)_2, \cdots, G(SK_t)_{288}\}\}
-\end{aligned}
-\label{eq:ephid-computation}
-\end{equation}
-
-Having computed the set $I$, and the logs that are locally stored in the device, it could be determined if the local user is at risk of being infected by computing the intersection between those two sets. If the intersection is empty, the user is not at risk of being infected, but if there is at least one ephemeral ID that they have in common, we can determine that the user is at risk. As we can see, the characteristics of this method allow users to know if they are infected with COVID-19, but they could not know who infected them, and also local authorities could not know how and when the citizen got infected, guaranteeing the privacy of all citizens involved.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%% SECTION 3 %%%%%%%
-\section{Discussion of the situation of the current COVID-19 applications}
-\label{section:discussion}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices nisl in libero aliquet eleifend. Nam nibh leo, egestas non auctor eu, egestas eu libero. Cras sem tortor, pulvinar sed tincidunt et, viverra id ipsum. Suspendisse venenatis pharetra lectus sit amet porta. Cras euismod et tellus in aliquet. Quisque non posuere velit. Vivamus dui tortor, euismod eu imperdiet vel, ornare vel lectus. Vestibulum id ex neque. Curabitur ligula magna, sagittis at pulvinar in, mattis at magna.
+This application is going to be developed by the National Department of digitization and artificial intelligence, the same team that previously developed Asistencia COVID-19 (Section \ref{sec:information-apps-spain}). The application is estimated to be launched in June, where the intention is to start testing the application in a more controlled environment, like the Canary Islands \cite{covid19-canary}. The collaboration between the government of the islands and the central government is key to achieve the successful implantation of the application. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
