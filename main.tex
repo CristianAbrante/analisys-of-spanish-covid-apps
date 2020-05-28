@@ -24,15 +24,15 @@
 \begin{abstract}
 {\em
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis maximus dui. Sed congue ultrices diam, ac posuere orci vehicula sit amet. Sed eu iaculis ex. Vestibulum tempor dictum nunc, sed tincidunt tortor feugiat a. Quisque cursus ut leo ac fringilla. Nullam feugiat, est quis egestas faucibus, nulla diam cursus justo, in dapibus lorem ipsum nec augue. Proin mattis fringilla lectus aliquet congue.
+COVID-19 pandemic has affected the entire society on a deep level. Finding new solutions for fighting against it has been a really important coordinated effort between institutions, companies, and governments. The development of software applications could be a key aspect in the control of the spreading of the virus. In this survey, it is covered the current approaches followed for the development of applications regarding the pandemic. 
 
 \bigskip
 
-Nulla orci augue, convallis sit amet neque et, vehicula tincidunt dolor. Vivamus commodo massa sit amet lobortis blandit. Curabitur imperdiet mi nec elit porttitor dictum. Vestibulum in urna risus. In ac laoreet lorem. Donec in libero eu dolor iaculis ullamcorper sit amet sit amet velit. Phasellus sit amet felis purus. Integer pretium nec erat quis sagittis. Etiam dictum hendrerit venenatis. Vestibulum semper, odio non efficitur suscipit, lorem ex iaculis libero, id pretium lacus augue a ipsum. Suspendisse commodo sed justo sit amet pharetra. Donec interdum pulvinar molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Also in this paper, it is discussed the case of Spain, where the impact of the pandemic and the decentralized nature of the healthcare system has conditioned the development of software solutions.
 }
 
 \begin{keywords}
-Keyword 1, Keyword 2, Keyword 3
+COVID-19, Applications, Software, Pandemic tracking
 \end{keywords}
 \end{abstract}
 
@@ -54,9 +54,22 @@ Keyword 1, Keyword 2, Keyword 3
 \section{Introduction}
 \label{section:introduction}
 
-The COVID-19 pandemic have caused a huge impact all over the world. The consequences of this pandemic are going to be cross-sectional, affecting both the economical development of many regions but also it is going to change the social behaviour in deep level. In this sense, also the healthcare systems have to be re-think and adapted for this new situation, taking into account that in the future this could happen again. \\
+COVID-19 pandemic has caused a huge impact all over the world. The consequences of this pandemic are going to be cross-sectional, affecting both the economical development of many regions but also it is going to change the social behavior on a deep level. In this sense, also the healthcare systems have to be re-think and adapted for this new situation, taking into account that in the future this could happen again. \\
 
-Focusing on healthcare applications, in the past they have been really effective at different levels. They have been used by patients that want to consult their electronic medical records, and also that want to appoint a date with a doctor. During this pandemic, many governments and institutions have taken into account the possibilities of generating a pandemic.
+Mobile technology has been relevant to solving healthcare issues in the past. And as we keep our mobile devices with us all day long, they could be also really relevant for fighting the COVID-19 pandemic. Using this device as the development platform could be the key to controlling the dynamic environment of the pandemic, which evolves fast and in an exponential way. The objective of this survey is to cover the main approaches present nowadays for the development of software applications that could help health authorities to fight the pandemic. \\
+
+In Section \ref{section:discussion}, we are going to focus on the concrete case of Spain. This country has been one of the most affected by the pandemic in the world, it was one of the epicenters of the illness at the beginning of March, and the government decreed strict lockdown measures in the middle of that month. The healthcare system in Spain is decentralized, where the majority of the competences on health issues correspond to the Autonomous Communities (\textit{Comunidades autónomas} in Spanish), which caused an uneven development of the illness in the different regions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{images/introduction/covid-cases-spain.png}
+    \caption{Cumulative number of death citizens in different regions of spain, from day 0 to day 77}
+    \label{fig:spain-evolution-regions}
+\end{figure}
+
+In Figure \ref{fig:spain-evolution-regions} we can see the different evolution of the pandemic in the regions of the country, in terms of accumulated deaths \cite{spain-covid}. It is remarkable the unbalanced influence on the virus, with particular aggressiveness in the regions of Madrid and Catalonia.\\
+
+Our purpose is to analyze what has been the steps that Spain has taken in order to develop different types of applications that could help with the pandemic, focusing on the most affected regions, and try to give a perspective both from a general and regional point of view.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -73,7 +86,7 @@ Information and auto-diagnosis applications and websites are the first approache
 
 The traditional test that can be done to a person to confirm if it is infected is the PCR test (\textit{polymerise chain reaction}), a test that can detect the presence of DNA of the virus in the patient. This method is effective, but it is really expensive at the cost of necessary chemical products, and also because the test takes a while to give a result. This caused that no country has developed more tests than 2.5\% of its' population \cite{covid19-ml}. For having a fast response, auto diagnosis applications could be an effective solution.\\
 
-Auto diagnosis applications try to give as a result if a patient is infected with COVID-19 receiving as input some parameters that the user can introduce in a simple form. Then, those results are fed to an intelligent system, usually a machine learning model, giving as a result a binary response: if the patient is infected or not. They are not as effective as a traditional response, but they are really helpful because they produce a fast response where a patient has doubts about being infected.\\
+Auto diagnosis applications try to give as a result if a patient is infected with COVID-19 receiving as input some parameters that the user can introduce in a simple form. Then, those results are fed to an intelligent system, usually a machine learning model, giving as a result a binary response: if the patient is infected or not. They are not as effective as a traditional test, but they are really helpful because they produce a fast response when a patient has doubts about being infected.\\
 
 Those applications usually ask the user to introduce parameters such as if they had a fever or if they had recently throat pain, but there have been more advanced applications like COVID-19 sounds app \cite{covid19-cambridge}, developed by Cambridge University, which asks the user to speak to the microphone, and with the sound of the voice it could determine if they are infected. \\
 
@@ -82,7 +95,7 @@ Although the creation of auto diagnosis applications is the first approach that 
 \subsection{COVID-19 tracking solutions}
 \label{subsection:covid-19-tracking}
 
-In Section \ref{subsection:information-auto-diagnosis}, we exposed several applications used mainly for auto diagnosis on population. This software is really useful for decongesting telephonic lines and reduce the number of visits to clinical centers, but it is not the right tool for analyzing the evolution of the pandemic and track the infected population.\\
+In Section \ref{subsection:information-auto-diagnosis}, we exposed the type of applications used mainly for auto diagnosis on population. This software is really useful for decongesting telephonic lines and reduce the number of visits to clinical centers, but it is not the right tool for analyzing the evolution of the pandemic and track the infected population.\\
 
 Achieving accurate monitoring of the virus is a really difficult task, mainly due to the infectivity and for a long time that it takes to manifest the first symptoms after the patient is infected. Thankfully, the development of mobile devices and new types of connectivity offers new possibilities for tracking how the virus is disseminated in the population. \\
 
@@ -194,7 +207,7 @@ In Section \ref{section:review}, it was exposed the different types of applicati
 
 In Spain, the central source of information for the pandemic has been the website of the Ministry of Health \cite{ministerio-sanidad}. In this website is where it is published the scientific information regarding the disease, and also is where the official numbers of new infected, dead and tested population is published every day.\\
 
-As the public health in Spain is decentralized, each autonomous community or region (Comunidad Autónoma in Spanish), have all the competencies for the organization of hospitals and logistics of healthcare in the region. This has caused some of them to have developed specific applications for auto-diagnosis and also for giving specific information to the citizens of the region. In this analysis, it is covered the solutions proposed by the community of Madrid, and the community of Catalonia, the two most affected regions in the country, and also the solution proposed by the central government.
+As the public health in Spain is decentralized, each autonomous community or region have all the competencies for the organization of hospitals and logistics of healthcare in the region. This has caused some of them to have developed specific applications for auto-diagnosis and also for giving specific information to the citizens of the region. In this analysis, it is covered the solutions proposed by the community of Madrid, and the community of Catalonia, the two most affected regions in the country (as shown in Figure \ref{fig:spain-evolution-regions}), and also the solution proposed by the central government.
 
 \paragraph{CoronaMadrid} \mbox{}\\
 
@@ -289,6 +302,8 @@ When analyzing tracking applications we can confirm that the main issue about th
 Finally, it was discussed in Section \ref{section:discussion} how the position of Spain was in this field. The decentralized nature of the healthcare system was a disadvantage in this sense because all efforts for creating applications were disseminated thought the autonomous communities. As it is more simple, regions focused on the development of information applications and that caused that many of them do not have the expected adoption by the population. During the month of May is where the development of a tracking application came into public discussion, but it is difficult to coordinate their use around all the territory of the country. We can conclude that the efforts of the Spanish government go in a good direction, with the focus on a decentralized tracking approach, but there is still a lot of work to do.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage{\pagestyle{empty}}
 
 %%%%%% BIBLIOGRAPHY %%%%%%
 \addcontentsline{toc}{section}{References}
