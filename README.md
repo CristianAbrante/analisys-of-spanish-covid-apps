@@ -1,4 +1,4 @@
-# Survey of COVID-19 mobile applications in Spain
+<h1 align="center">Survey of COVID-19 mobile applications in Spain</h1>
 
 <p align="center">
   <img alt="UPM" src="https://img.shields.io/badge/EIT%20Digital-UPM-blue?style=flat-square">
